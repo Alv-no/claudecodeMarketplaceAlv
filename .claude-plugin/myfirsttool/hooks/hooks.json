@@ -1,0 +1,39 @@
+{
+  "PreToolUse": [
+    {
+      "matcher": "Write|Edit",
+      "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/plugins/myfirsttool/hooks/pre-write-lint.sh\"",
+      "timeout": 5000
+    }
+  ],
+  "PostToolUse": [
+    {
+      "matcher": "Write|Edit",
+      "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/plugins/myfirsttool/hooks/post-write-lint.sh\"",
+      "timeout": 15000
+    },
+    {
+      "matcher": "Bash",
+      "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/plugins/myfirsttool/hooks/audit-logger.sh\"",
+      "timeout": 5000
+    }
+  ],
+  "Stop": [
+    {
+      "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/plugins/myfirsttool/hooks/notify-done.sh\" stop",
+      "timeout": 10000
+    }
+  ],
+  "Notification": [
+    {
+      "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/plugins/myfirsttool/hooks/notify-done.sh\" notification",
+      "timeout": 10000
+    }
+  ],
+  "SubagentStop": [
+    {
+      "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/plugins/myfirsttool/hooks/notify-done.sh\" subagent",
+      "timeout": 10000
+    }
+  ]
+}
