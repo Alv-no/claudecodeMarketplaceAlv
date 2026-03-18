@@ -1,0 +1,13 @@
+{
+  "name": "alvmarketplace",
+  "owner": {
+    "name": "ALV"
+  },
+  "plugins": [
+    {
+      "name": "myfirsttool",
+      "source": "./myfirsttool",
+      "description": "All-in-one Claude Code plugin"
+    }
+  ]
+}
