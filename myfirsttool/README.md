@@ -21,34 +21,21 @@ All-in-one Claude Code plugin providing file protection, auto-linting, audit log
 
 ## Installation
 
-### As a Shared Plugin (claude.ai upload)
+Install via the ALV marketplace from inside Claude Code:
 
-1. Zip the `myfirsttool/` directory:
-   ```bash
-   cd .claude/plugins
-   zip -r myfirsttool.zip myfirsttool/
-   ```
-2. Upload `myfirsttool.zip` on the Claude Code plugins page.
+```
+/plugin marketplace add https://github.com/Alv-no/claudecodeMarketplaceAlv.git
+/plugin install myfirsttool@alvmarketplace
+```
 
-### Manual Installation
+### Required dependencies (install those you need)
 
-1. Copy the `myfirsttool/` folder into your project's `.claude/plugins/` directory:
-   ```bash
-   cp -r myfirsttool /path/to/your/project/.claude/plugins/
-   ```
-
-2. Ensure scripts are executable:
-   ```bash
-   chmod +x .claude/plugins/myfirsttool/hooks/*.sh
-   ```
-
-3. **Required dependencies** (install those you need):
-   - `jq` — required for all hooks (JSON parsing)
-   - `prettier` / `eslint` — JS/TS formatting (prefers project-local `node_modules/.bin/`)
-   - `ruff` or `black` + `isort` — Python formatting
-   - `rustfmt` — Rust formatting
-   - `gofmt` + `goimports` — Go formatting
-   - `notify-send` (Linux) or `terminal-notifier` (macOS) — desktop notifications
+- `jq` — required for all hooks (JSON parsing)
+- `prettier` / `eslint` — JS/TS formatting (prefers project-local `node_modules/.bin/`)
+- `ruff` or `black` + `isort` — Python formatting
+- `rustfmt` — Rust formatting
+- `gofmt` + `goimports` — Go formatting
+- `notify-send` (Linux) or `terminal-notifier` (macOS) — desktop notifications
 
 ## File Structure
 
@@ -97,6 +84,7 @@ All logs are written to the `logs/` directory:
 
 ## Configuration
 
-The plugin uses these environment variables:
-- `CLAUDE_PROJECT_DIR` — project root (set automatically by Claude Code)
-- `CLAUDE_SESSION_ID` — current session ID (set automatically by Claude Code)
+The plugin uses these environment variables (all set automatically by Claude Code):
+- `CLAUDE_PLUGIN_ROOT` — plugin install directory (used by hook commands and scripts)
+- `CLAUDE_PROJECT_DIR` — the user's project root
+- `CLAUDE_SESSION_ID` — current session ID

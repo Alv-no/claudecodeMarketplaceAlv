@@ -7,7 +7,7 @@ set -uo pipefail
 
 EVENT_TYPE="${1:-notification}"
 INPUT="$(cat)"
-PLUGIN_DIR="${CLAUDE_PROJECT_DIR:-.}/.claude/plugins/myfirsttool"
+PLUGIN_DIR="${CLAUDE_PLUGIN_ROOT:-.}"
 SOUNDS_DIR="$PLUGIN_DIR/sounds"
 
 # Extract session directory from context

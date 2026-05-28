@@ -5,7 +5,7 @@
 set -euo pipefail
 
 INPUT="$(cat)"
-PLUGIN_DIR="${CLAUDE_PROJECT_DIR:-.}/.claude/plugins/myfirsttool"
+PLUGIN_DIR="${CLAUDE_PLUGIN_ROOT:-.}"
 LOG_DIR="$PLUGIN_DIR/logs"
 mkdir -p "$LOG_DIR"
 

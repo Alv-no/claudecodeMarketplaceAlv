@@ -1,0 +1,9 @@
+{
+  "name": "myfirsttool",
+  "version": "0.1.0",
+  "description": "All-in-one Claude Code plugin providing file protection, auto-linting, audit logging, desktop notifications, and a deploy-readiness checker.",
+  "author": {
+    "name": "ALV"
+  },
+  "keywords": ["hooks", "linting", "audit", "notifications", "deploy"]
+}
